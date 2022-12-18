@@ -58,91 +58,107 @@
       - stored in packages inside libraries
     - using the `options cmplib =` to load the functions inside a dataset
 - subsetting data
-	- `keep` statement to select a set of variables from an existing dataset 
-	- `drop` to select all but some of the variables 
-	- `firstobs` and `obs` to select rows 
-	- `where` to select rows that meet criteria 
+  - `keep` statement to select a set of variables from an existing dataset
+  - `drop` to select all but some of the variables
+  - `firstobs` and `obs` to select rows
+  - `where` to select rows that meet criteria
 - concatenating datasets
-	- rbind with `set`
-	- multiple `set` statements to rbind 
-	- `merge` to cbind with different dimensions
-	- `merge` has all the usual considerations of joins 
+  - rbind with `set`
+  - multiple `set` statements to rbind
+  - `merge` to cbind with different dimensions
+  - `merge` has all the usual considerations of joins
 
 # Chapter 4
 
 - `do` loop
-	- It basically creates an iter, along which you can generate new variables
-	- the iter gets recorded as a column by default
-	- use `keep` and `drop` to select which variables get recorded 
-	- they can be nested
-	- `set` to create a new varible along the rows of an existing dataset
-	- `sum` statement to just count 
-- random number generation 
-	- `rand` to generate random variates 
-	- associated probability functions
+  - It basically creates an iter, along which you can generate new variables
+  - the iter gets recorded as a column by default
+  - use `keep` and `drop` to select which variables get recorded
+  - they can be nested
+  - `set` to create a new varible along the rows of an existing dataset
+  - `sum` statement to just count
+- random number generation
+  - `rand` to generate random variates
+  - associated probability functions
 - plotting
-	- `plotname x=variable y=variable` sintax for most plots 
-	- `by` statements to facet 
-	- `sgscatter` to create multipanel plot
-		- `matrix` to recreate pairs 
-		- `plot` to generate multiple scatter plots 
-	- `ods layout`
-	- `sgpanel`, `panelby` 
+  - `plotname x=variable y=variable` sintax for most plots
+  - `by` statements to facet
+  - `sgscatter` to create multipanel plot
+    - `matrix` to recreate pairs
+    - `plot` to generate multiple scatter plots
+  - `ods layout`
+  - `sgpanel`, `panelby`
 
 # Chapter 5
 
-- descriptive statistics 
-	- `mean` will also print stuff that you would see in R's summary
-	- `univariate` is like a catch all 
+- descriptive statistics
+  - `mean` will also print stuff that you would see in R's summary
+  - `univariate` is like a catch all
 - ODS
-	- SAS code just produces the numbers, the ODS creates the formatted tables
-	- `ods select` before the `proc` to select some of the output 
-	- `ods output` to save output to a new dataset 
-	- `output out` statement to save specific statistics 
-- macro variables 
-	- `%let` and `&` sintax to create global variables
-	- Using quotation marks to resolve character variables 
-	- Using `proc sql` and `:` sintax to create global variables automatically
-	- `%put` to print stuff to the log
-- macro programs 
-	- `%macro` and `%` sintax to create and call macros 
-	- positional and keyword parameters 
-	- Macro statements 
-		- `%if`, `%then` and `%else% to run SAS code conditionally
-		- `%do% and `%end` to run several lines of code
-		
-# Chapter 6 
+  - SAS code just produces the numbers, the ODS creates the formatted tables
+  - `ods select` before the `proc` to select some of the output
+  - `ods output` to save output to a new dataset
+  - `output out` statement to save specific statistics
+- macro variables
+  - `%let` and `&` sintax to create global variables
+  - Using quotation marks to resolve character variables
+  - Using `proc sql` and `:` sintax to create global variables automatically
+  - `%put` to print stuff to the log
+- macro programs
+  - `%macro` and `%` sintax to create and call macros
+  - positional and keyword parameters
+  - Macro statements
+    - `%if`, `%then` and `%else% to run SAS code conditionally
+    - `%do% and `%end` to run several lines of code
 
-- Linear models 
-	- `proc reg` and `model` is the basic sintax 
-	- `store` to save the model
-	- `proc plm` to predict based on a model
-	- `glm` for general linear models, specifically for anova
-	- `proc glmselect` to perform model selection
-	- `proc logistic` for logistic regression
-	- `proc genmod` for generalized linear models 
-	- `proc mixed` to code mixed effects models
-	- `proc glimmix` for generalized linear models with mixed effects 
-	- `proc mcmc` to implement MCMC
+# Chapter 6
 
-# Chapter 7 
+- Linear models
+  - `proc reg` and `model` is the basic sintax
+  - `store` to save the model
+  - `proc plm` to predict based on a model
+  - `glm` for general linear models, specifically for anova
+  - `proc glmselect` to perform model selection
+  - `proc logistic` for logistic regression
+  - `proc genmod` for generalized linear models
+  - `proc mixed` to code mixed effects models
+  - `proc glimmix` for generalized linear models with mixed effects
+  - `proc mcmc` to implement MCMC
 
-- basics 
-	- braces to enter matrices by hand 
-	- matrices have to be of single type
-	- `print` statement to see stuff 
-	- accessing entries and obtaining dimentions is basically the same as in R
-	- basic and comparison operators 
-	- recycling works a little different: it's mindful of whether the small object is a row or column
-	- subscript reduction operators are similar to apply for a established set of operators
-- modules and subroutines 
-	- distinction between functions and subroutines 
-	- `J` and `randgen` subroutines to create a random matrix
-	- `randfun` to create random vectors
-	- most common matrix functions are just like in R
-	- `repeat`, `concat`, `any`, `all`, `sample`, `unique`
-	- creating a module
-		- global arguments for functions
-		- creating multiple matrices with subroutines 
-	- storage 
-		- 
+# Chapter 7
+
+- basics
+  - `proc iml` and `quit`
+  - braces to enter matrices by hand
+  - matrices have to be of single type
+  - `print` statement to see stuff
+  - accessing entries and obtaining dimentions is basically the same as in R
+  - basic and comparison operators
+  - recycling works a little different: it's mindful of whether the small object is a row or column
+  - subscript reduction operators are similar to apply for a established set of operators
+- modules and subroutines
+  - distinction between functions and subroutines
+  - `J` and `randgen` subroutines to create a random matrix
+  - `randfun` to create random vectors
+  - most common matrix functions are just like in R
+  - `repeat`, `concat`, `any`, `all`, `sample`, `unique`
+  - creating a module
+    - global arguments for functions
+    - creating multiple matrices with subroutines
+  - storage
+    - all matrices and modules are stored by default in `work.imlstor`
+    - `reset storage` has two functions
+      - it can change where you save stuff
+      - it can change what catalog you're pointing to
+    - `load`, `remove` and `store` keywords
+    - iml is in RAM, datasets are on disk
+    - `free` to get rid of matrices that are no longer needed
+  - matrices from data sets
+    - `use`, `read` and `close`
+  - matrices to data sets
+  - `create`, `var` and `from`
+  - `append` to actually put the data in the created data set
+  - calling procedures within iml
+  - `submit` and `endsubmit`
+  - creating plots of matrices using `call` to avoid creating a new data set and then using `proc sgplot`
+  - conditionals, loops and submit blocks to generate simulations
